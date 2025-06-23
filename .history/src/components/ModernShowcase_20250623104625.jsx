@@ -844,10 +844,11 @@ const ModernShowcase = ({ currency, showPricing: initialShowPricing }) => {
   // Scroll to pricing section
   const scrollToPricing = () => {
     // Calculate scroll position to bring pricing grid to top
-    // Account for countdown header (80px) + small padding (20px)
-    const headerHeight = 100;
+    // Account for header (80px) + some padding (40px)
+    const headerHeight = 120;
+    const currentScrollTop = window.pageYOffset || document.documentElement.scrollTop;
     
-    // Find pricing grid element
+    // Find pricing grid element or calculate approximate position
     const pricingSection = document.querySelector('[data-pricing-section]');
     if (pricingSection) {
       const elementTop = pricingSection.offsetTop;
@@ -858,10 +859,9 @@ const ModernShowcase = ({ currency, showPricing: initialShowPricing }) => {
         behavior: 'smooth'
       });
     } else {
-      // Fallback: scroll to a position that should be around the pricing cards
-      // Skip past the title section which is typically around 400-500px
+      // Fallback: scroll down by a calculated amount
       window.scrollTo({
-        top: 500,
+        top: currentScrollTop + window.innerHeight * 0.5,
         behavior: 'smooth'
       });
     }
@@ -1259,6 +1259,16 @@ Timestamp: ${new Date().toLocaleString()}`;
                   </div>
                 </div>
               </div>
+
+              <div className="hidden md:block w-px h-8 bg-white/20" />
+              
+              <motion.button
+                whileHover={{ scale: 1.02 }}
+                whileTap={{ scale: 0.98 }}
+                className="px-6 py-3 rounded-lg bg-gradient-to-r from-[#8129D7] to-[#2A5EDB] hover:from-[#9747FF] hover:to-[#4C7AE6] text-white font-medium shadow-lg shadow-indigo-500/20 transition-all duration-300"
+              >
+                Choose Your Plan
+              </motion.button>
             </div>
           </div>
         </motion.div>
@@ -1782,7 +1792,7 @@ Timestamp: ${new Date().toLocaleString()}`;
                     )}
                   </motion.div>
 
-                  <div className="grid md:grid-cols-3 gap-8" data-pricing-section>
+                  <div className="grid md:grid-cols-3 gap-8">
                     {pricingPlans.slice(0, 3).map((plan, index) => (
                       <motion.div
                         key={plan.name}

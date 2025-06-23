@@ -1259,6 +1259,17 @@ Timestamp: ${new Date().toLocaleString()}`;
                   </div>
                 </div>
               </div>
+
+              <div className="hidden md:block w-px h-8 bg-white/20" />
+              
+              <motion.button
+                whileHover={{ scale: 1.02 }}
+                whileTap={{ scale: 0.98 }}
+                onClick={scrollToPricing}
+                className="px-6 py-3 rounded-lg bg-gradient-to-r from-[#8129D7] to-[#2A5EDB] hover:from-[#9747FF] hover:to-[#4C7AE6] text-white font-medium shadow-lg shadow-indigo-500/20 transition-all duration-300"
+              >
+                Choose Your Plan
+              </motion.button>
             </div>
           </div>
         </motion.div>
