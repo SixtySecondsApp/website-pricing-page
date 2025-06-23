@@ -43,10 +43,10 @@ const ModernShowcase = ({ currency, showPricing: initialShowPricing }) => {
     seconds: 0
   });
 
-  // Calculate countdown to price increase (Friday July 4th, 2025 at 12pm UK time)
+  // Calculate countdown to price increase (Monday July 7th, 2025 at 9am UK time)
   useEffect(() => {
-    // Set target date to Friday July 4th, 2025 at 12pm UK time (BST = UTC+1)
-    const targetDate = new Date('2025-07-04T11:00:00.000Z'); // 11am UTC = 12pm BST
+    // Set target date to Monday July 7th, 2025 at 9am UK time (BST = UTC+1)
+    const targetDate = new Date('2025-07-07T08:00:00.000Z'); // 8am UTC = 9am BST
     
     const updateCountdown = () => {
       const now = new Date().getTime();
