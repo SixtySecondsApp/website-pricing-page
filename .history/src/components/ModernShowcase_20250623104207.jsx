@@ -841,32 +841,6 @@ const ModernShowcase = ({ currency, showPricing: initialShowPricing }) => {
     return pricingData[currency]?.[planName]?.[period]?.link || '#';
   };
 
-  // Scroll to pricing section
-  const scrollToPricing = () => {
-    // Calculate scroll position to bring pricing grid to top
-    // Account for countdown header (80px) + small padding (20px)
-    const headerHeight = 100;
-    
-    // Find pricing grid element
-    const pricingSection = document.querySelector('[data-pricing-section]');
-    if (pricingSection) {
-      const elementTop = pricingSection.offsetTop;
-      const scrollPosition = elementTop - headerHeight;
-      
-      window.scrollTo({
-        top: scrollPosition,
-        behavior: 'smooth'
-      });
-    } else {
-      // Fallback: scroll to a position that should be around the pricing cards
-      // Skip past the title section which is typically around 400-500px
-      window.scrollTo({
-        top: 500,
-        behavior: 'smooth'
-      });
-    }
-  };
-
   // Add useEffect for initial delay
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -1195,74 +1169,69 @@ Timestamp: ${new Date().toLocaleString()}`;
 
   return (
     <div className="h-screen bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-[#1a1a2e] via-[#1a1a2e] to-black text-white overflow-y-auto overflow-x-hidden relative [&::-webkit-scrollbar]:w-2 [&::-webkit-scrollbar-track]:bg-black/20 [&::-webkit-scrollbar-thumb]:bg-white/10 [&::-webkit-scrollbar-thumb]:rounded-full">
-      {/* Price Increase Countdown Header - Only on Pricing Page */}
-      {showPricing && (
-        <motion.div 
-          initial={{ y: -50, opacity: 0 }}
-          animate={{ y: 0, opacity: 1 }}
-          transition={{ delay: 3, duration: 0.5, ease: "easeOut" }}
-          className="fixed top-0 left-0 right-0 z-50 bg-gradient-to-r from-[#8129D7]/10 via-[#2A5EDB]/10 to-[#8129D7]/10 backdrop-blur-xl border-b border-white/10"
-        >
-          <div className="max-w-7xl mx-auto px-4 py-4">
-            <div className="flex items-center justify-center gap-6 text-center">
-              <motion.div 
-                animate={{ 
-                  scale: [1, 1.05, 1],
-                }}
-                transition={{ 
-                  duration: 3, 
-                  repeat: Infinity,
-                  ease: "easeInOut"
-                }}
-                className="flex items-center gap-3"
-              >
-                <div className="p-2 rounded-full bg-gradient-to-r from-[#8129D7]/20 to-[#2A5EDB]/20 backdrop-blur-sm">
-                  <Sparkles className="w-5 h-5 text-[#8129D7]" />
-                </div>
-                <span className="text-white/90 font-medium text-lg">
-                  Current pricing ends soon
+      {/* Price Increase Countdown Header */}
+      <motion.div 
+        initial={{ y: -50, opacity: 0 }}
+        animate={{ y: 0, opacity: 1 }}
+        className="fixed top-0 left-0 right-0 z-50 bg-gradient-to-r from-orange-500/20 via-red-500/20 to-orange-500/20 backdrop-blur-md border-b border-orange-500/30"
+      >
+        <div className="max-w-7xl mx-auto px-4 py-3">
+          <div className="flex items-center justify-center gap-4 text-center">
+            <motion.div 
+              animate={{ 
+                scale: [1, 1.1, 1],
+                opacity: [0.8, 1, 0.8]
+              }}
+              transition={{ 
+                duration: 2, 
+                repeat: Infinity,
+                ease: "easeInOut"
+              }}
+              className="flex items-center gap-2"
+            >
+              <AlertTriangle className="w-5 h-5 text-orange-400" />
+              <span className="text-orange-200 font-medium">
+                Prices increasing soon!
+              </span>
+            </motion.div>
+            
+            <div className="hidden sm:block w-px h-6 bg-orange-500/30" />
+            
+            <div className="flex items-center gap-2 text-white">
+              <Clock className="w-4 h-4 text-orange-400" />
+              <span className="text-sm font-medium">Time remaining:</span>
+              <div className="flex items-center gap-1 font-mono">
+                <span className="bg-orange-500/20 px-2 py-1 rounded text-orange-200 font-bold">
+                  {timeRemaining.days.toString().padStart(2, '0')}d
                 </span>
-              </motion.div>
-              
-              <div className="hidden md:block w-px h-8 bg-white/20" />
-              
-              <div className="flex items-center gap-3 text-white">
-                <Clock className="w-5 h-5 text-[#2A5EDB]" />
-                <span className="text-white/80 font-medium">Secure your rate:</span>
-                <div className="flex items-center gap-2 font-mono">
-                  <div className="px-3 py-2 rounded-lg bg-white/5 border border-white/10 backdrop-blur-sm">
-                    <span className="text-white font-bold text-lg">
-                      {timeRemaining.days.toString().padStart(2, '0')}
-                    </span>
-                    <span className="text-white/60 text-sm ml-1">d</span>
-                  </div>
-                  <span className="text-white/40">:</span>
-                  <div className="px-3 py-2 rounded-lg bg-white/5 border border-white/10 backdrop-blur-sm">
-                    <span className="text-white font-bold text-lg">
-                      {timeRemaining.hours.toString().padStart(2, '0')}
-                    </span>
-                    <span className="text-white/60 text-sm ml-1">h</span>
-                  </div>
-                  <span className="text-white/40">:</span>
-                  <div className="px-3 py-2 rounded-lg bg-white/5 border border-white/10 backdrop-blur-sm">
-                    <span className="text-white font-bold text-lg">
-                      {timeRemaining.minutes.toString().padStart(2, '0')}
-                    </span>
-                    <span className="text-white/60 text-sm ml-1">m</span>
-                  </div>
-                  <span className="text-white/40">:</span>
-                  <div className="px-3 py-2 rounded-lg bg-white/5 border border-white/10 backdrop-blur-sm">
-                    <span className="text-white font-bold text-lg">
-                      {timeRemaining.seconds.toString().padStart(2, '0')}
-                    </span>
-                    <span className="text-white/60 text-sm ml-1">s</span>
-                  </div>
-                </div>
+                <span className="text-orange-400">:</span>
+                <span className="bg-orange-500/20 px-2 py-1 rounded text-orange-200 font-bold">
+                  {timeRemaining.hours.toString().padStart(2, '0')}h
+                </span>
+                <span className="text-orange-400">:</span>
+                <span className="bg-orange-500/20 px-2 py-1 rounded text-orange-200 font-bold">
+                  {timeRemaining.minutes.toString().padStart(2, '0')}m
+                </span>
+                <span className="text-orange-400">:</span>
+                <span className="bg-orange-500/20 px-2 py-1 rounded text-orange-200 font-bold">
+                  {timeRemaining.seconds.toString().padStart(2, '0')}s
+                </span>
               </div>
             </div>
+
+            <div className="hidden sm:block w-px h-6 bg-orange-500/30" />
+            
+            <motion.button
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              onClick={() => handleNavigation('pricing')}
+              className="px-4 py-2 rounded-lg bg-gradient-to-r from-orange-500 to-red-500 hover:from-orange-400 hover:to-red-400 text-white font-medium shadow-lg transition-all duration-300 text-sm"
+            >
+              Lock in Current Prices
+            </motion.button>
           </div>
-        </motion.div>
-      )}
+        </div>
+      </motion.div>
 
       {/* Background Elements Container */}
       <div className="fixed inset-0 pointer-events-none z-0">
@@ -1308,7 +1277,7 @@ Timestamp: ${new Date().toLocaleString()}`;
       </div>
       
       {/* Content Wrapper with 96% scale */}
-      <div className={`mx-auto max-w-[96%] h-[96%] transform scale-96 origin-top ${showPricing ? 'pt-20' : ''}`}>
+      <div className="mx-auto max-w-[96%] h-[96%] transform scale-96 origin-top pt-16">
         <AnimatePresence mode="wait">
           {currentStep === 'challenges' && (
             <LayoutGroup>
@@ -1782,7 +1751,7 @@ Timestamp: ${new Date().toLocaleString()}`;
                     )}
                   </motion.div>
 
-                  <div className="grid md:grid-cols-3 gap-8" data-pricing-section>
+                  <div className="grid md:grid-cols-3 gap-8">
                     {pricingPlans.slice(0, 3).map((plan, index) => (
                       <motion.div
                         key={plan.name}

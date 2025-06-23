@@ -841,32 +841,6 @@ const ModernShowcase = ({ currency, showPricing: initialShowPricing }) => {
     return pricingData[currency]?.[planName]?.[period]?.link || '#';
   };
 
-  // Scroll to pricing section
-  const scrollToPricing = () => {
-    // Calculate scroll position to bring pricing grid to top
-    // Account for countdown header (80px) + small padding (20px)
-    const headerHeight = 100;
-    
-    // Find pricing grid element
-    const pricingSection = document.querySelector('[data-pricing-section]');
-    if (pricingSection) {
-      const elementTop = pricingSection.offsetTop;
-      const scrollPosition = elementTop - headerHeight;
-      
-      window.scrollTo({
-        top: scrollPosition,
-        behavior: 'smooth'
-      });
-    } else {
-      // Fallback: scroll to a position that should be around the pricing cards
-      // Skip past the title section which is typically around 400-500px
-      window.scrollTo({
-        top: 500,
-        behavior: 'smooth'
-      });
-    }
-  };
-
   // Add useEffect for initial delay
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -1200,7 +1174,6 @@ Timestamp: ${new Date().toLocaleString()}`;
         <motion.div 
           initial={{ y: -50, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
-          transition={{ delay: 3, duration: 0.5, ease: "easeOut" }}
           className="fixed top-0 left-0 right-0 z-50 bg-gradient-to-r from-[#8129D7]/10 via-[#2A5EDB]/10 to-[#8129D7]/10 backdrop-blur-xl border-b border-white/10"
         >
           <div className="max-w-7xl mx-auto px-4 py-4">
@@ -1259,6 +1232,16 @@ Timestamp: ${new Date().toLocaleString()}`;
                   </div>
                 </div>
               </div>
+
+              <div className="hidden md:block w-px h-8 bg-white/20" />
+              
+              <motion.button
+                whileHover={{ scale: 1.02 }}
+                whileTap={{ scale: 0.98 }}
+                className="px-6 py-3 rounded-lg bg-gradient-to-r from-[#8129D7] to-[#2A5EDB] hover:from-[#9747FF] hover:to-[#4C7AE6] text-white font-medium shadow-lg shadow-indigo-500/20 transition-all duration-300"
+              >
+                Choose Your Plan
+              </motion.button>
             </div>
           </div>
         </motion.div>
@@ -1782,7 +1765,7 @@ Timestamp: ${new Date().toLocaleString()}`;
                     )}
                   </motion.div>
 
-                  <div className="grid md:grid-cols-3 gap-8" data-pricing-section>
+                  <div className="grid md:grid-cols-3 gap-8">
                     {pricingPlans.slice(0, 3).map((plan, index) => (
                       <motion.div
                         key={plan.name}
