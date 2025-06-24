@@ -1732,17 +1732,14 @@ Timestamp: ${new Date().toLocaleString()}`;
               {...fadeIn}
             >
               <div className="relative h-full max-w-7xl mx-auto px-4 py-12 md:py-16 z-20">
-                {/* Only show back button if there's navigation history */}
-                {navigationHistory.length > 1 && (
-                  <motion.button 
-                    onClick={handleBack}
-                    className="group mb-12 md:mb-16 inline-flex items-center gap-3 text-white/60 hover:text-white text-lg md:text-xl font-medium"
-                    whileHover={{ x: -5 }}
-                  >
-                    <ArrowLeft className="w-5 h-5 md:w-6 md:h-6" />
-                    <span>Back</span>
-                  </motion.button>
-                )}
+                <motion.button 
+                  onClick={handleBack}
+                  className="group mb-12 md:mb-16 inline-flex items-center gap-3 text-white/60 hover:text-white text-lg md:text-xl font-medium"
+                  whileHover={{ x: -5 }}
+                >
+                  <ArrowLeft className="w-5 h-5 md:w-6 md:h-6" />
+                  <span>Back</span>
+                </motion.button>
 
                 <div className="space-y-16">
                   <motion.div
