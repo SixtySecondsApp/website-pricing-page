@@ -1367,7 +1367,7 @@ Timestamp: ${new Date().toLocaleString()}`;
       </div>
       
       {/* Content Wrapper with 96% scale */}
-      <div className={`mx-auto max-w-[96%] h-[96%] transform scale-96 origin-top ${showPricing ? 'pt-20 md:pt-24' : ''}`}>
+      <div className={`mx-auto max-w-[96%] h-[96%] transform scale-96 origin-top ${showPricing ? 'pt-20' : ''}`}>
         <AnimatePresence mode="wait">
           {currentStep === 'challenges' && (
             <LayoutGroup>
