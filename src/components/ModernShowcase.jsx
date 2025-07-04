@@ -522,44 +522,44 @@ const ModernShowcase = ({ currency, showPricing: initialShowPricing }) => {
   const pricingData = {
     GBP: {
       'Self Managed': {
-        monthly: { total: 399, deposit: null, afterKickoff: null, link: 'https://sixtyseconds.chargebee.com/hosted_pages/checkout?subscription_items[item_price_id][0]=Self-Managed-GBP-Monthly&utm_source=cb-app-copy' },
-        annual: { total: 3999, deposit: null, afterKickoff: null, link: 'https://sixtyseconds.chargebee.com/hosted_pages/checkout?subscription_items[item_price_id][0]=Self-Managed-GBP-Yearly&utm_source=cb-app-copy' }
+        monthly: { total: 599, deposit: null, afterKickoff: null, link: 'https://sixtyseconds.chargebee.com/hosted_pages/checkout?subscription_items[item_price_id][0]=Self-Managed-GBP-Monthly&utm_source=cb-app-copy' },
+        annual: { total: 5999, deposit: null, afterKickoff: null, link: 'https://sixtyseconds.chargebee.com/hosted_pages/checkout?subscription_items[item_price_id][0]=Self-Managed-GBP-Yearly&utm_source=cb-app-copy' }
       },
       'Growth': {
-        monthly: { total: 999, deposit: 199, afterKickoff: 800, link: 'https://sixtyseconds.chargebee.com/hosted_pages/checkout?subscription_items[item_price_id][0]=Onboarding-Reserve-GBP-Monthly&utm_source=cb-app-copy' },
-        annual: { total: 11688, deposit: 2337, afterKickoff: 9351, link: 'https://sixtyseconds.chargebee.com/hosted_pages/checkout?subscription_items[item_price_id][0]=Onboarding-Reserve-GBP-Yearly&utm_source=cb-app-copy' }
+        monthly: { total: 1999, deposit: 399, afterKickoff: 1600, link: 'https://sixtyseconds.chargebee.com/hosted_pages/checkout?subscription_items[item_price_id][0]=Onboarding-Reserve-GBP-Monthly&utm_source=cb-app-copy' },
+        annual: { total: 23388, deposit: 4677, afterKickoff: 18711, link: 'https://sixtyseconds.chargebee.com/hosted_pages/checkout?subscription_items[item_price_id][0]=Onboarding-Reserve-GBP-Yearly&utm_source=cb-app-copy' }
       },
       'Scale': {
-        monthly: { total: 1699, deposit: 339, afterKickoff: 1360, link: 'https://sixtyseconds.chargebee.com/hosted_pages/checkout?subscription_items[item_price_id][0]=Onboarding-Reserve---Scale-GBP-Monthly&utm_source=cb-app-copy' },
-        annual: { total: 16990, deposit: 3398, afterKickoff: 13592, link: 'https://sixtyseconds.chargebee.com/hosted_pages/checkout?subscription_items[item_price_id][0]=Onboarding-Reserve---Scale-GBP-Yearly&utm_source=cb-app-copy' }
+        monthly: { total: 2699, deposit: 539, afterKickoff: 2160, link: 'https://sixtyseconds.chargebee.com/hosted_pages/checkout?subscription_items[item_price_id][0]=Onboarding-Reserve---Scale-GBP-Monthly&utm_source=cb-app-copy' },
+        annual: { total: 26990, deposit: 5398, afterKickoff: 21592, link: 'https://sixtyseconds.chargebee.com/hosted_pages/checkout?subscription_items[item_price_id][0]=Onboarding-Reserve---Scale-GBP-Yearly&utm_source=cb-app-copy' }
       }
     },
     USD: {
       'Self Managed': {
-        monthly: { total: 507, deposit: null, afterKickoff: null, link: 'https://sixtyseconds.chargebee.com/hosted_pages/checkout?subscription_items[item_price_id][0]=Self-Managed-USD-Monthly&utm_source=cb-app-copy' },
-        annual: { total: 5067, deposit: null, afterKickoff: null, link: 'https://sixtyseconds.chargebee.com/hosted_pages/checkout?subscription_items[item_price_id][0]=Self-Managed-USD-Yearly&utm_source=cb-app-copy' }
+        monthly: { total: 761, deposit: null, afterKickoff: null, link: 'https://sixtyseconds.chargebee.com/hosted_pages/checkout?subscription_items[item_price_id][0]=Self-Managed-USD-Monthly&utm_source=cb-app-copy' },
+        annual: { total: 7619, deposit: null, afterKickoff: null, link: 'https://sixtyseconds.chargebee.com/hosted_pages/checkout?subscription_items[item_price_id][0]=Self-Managed-USD-Yearly&utm_source=cb-app-copy' }
       },
       'Growth': {
-        monthly: { total: 1269, deposit: 253, afterKickoff: 1016, link: 'https://sixtyseconds.chargebee.com/hosted_pages/checkout?subscription_items[item_price_id][0]=Onboarding-Reserve-USD-Monthly&utm_source=cb-app-copy' },
-        annual: { total: 12687, deposit: 2537, afterKickoff: 10150, link: 'https://sixtyseconds.chargebee.com/hosted_pages/checkout?subscription_items[item_price_id][0]=Onboarding-Reserve-USD-Yearly&utm_source=cb-app-copy' }
+        monthly: { total: 2539, deposit: 507, afterKickoff: 2032, link: 'https://sixtyseconds.chargebee.com/hosted_pages/checkout?subscription_items[item_price_id][0]=Onboarding-Reserve-USD-Monthly&utm_source=cb-app-copy' },
+        annual: { total: 29703, deposit: 5940, afterKickoff: 23763, link: 'https://sixtyseconds.chargebee.com/hosted_pages/checkout?subscription_items[item_price_id][0]=Onboarding-Reserve-USD-Yearly&utm_source=cb-app-copy' }
       },
       'Scale': {
-        monthly: { total: 2158, deposit: 431, afterKickoff: 1727, link: 'https://sixtyseconds.chargebee.com/hosted_pages/checkout?subscription_items[item_price_id][0]=Onboarding-Reserve---Scale-USD-Monthly&utm_source=cb-app-copy' },
-        annual: { total: 21577, deposit: 4315, afterKickoff: 17262, link: 'https://sixtyseconds.chargebee.com/hosted_pages/checkout?subscription_items[item_price_id][0]=Onboarding-Reserve---Scale-USD-Yearly&utm_source=cb-app-copy' }
+        monthly: { total: 3428, deposit: 685, afterKickoff: 2743, link: 'https://sixtyseconds.chargebee.com/hosted_pages/checkout?subscription_items[item_price_id][0]=Onboarding-Reserve---Scale-USD-Monthly&utm_source=cb-app-copy' },
+        annual: { total: 34277, deposit: 6855, afterKickoff: 27422, link: 'https://sixtyseconds.chargebee.com/hosted_pages/checkout?subscription_items[item_price_id][0]=Onboarding-Reserve---Scale-USD-Yearly&utm_source=cb-app-copy' }
       }
     },
     EUR: {
       'Self Managed': {
-        monthly: { total: 467, deposit: null, afterKickoff: null, link: 'https://sixtyseconds.chargebee.com/hosted_pages/checkout?subscription_items[item_price_id][0]=Self-Managed-EUR-Monthly&utm_source=cb-app-copy' },
-        annual: { total: 4668, deposit: null, afterKickoff: null, link: 'https://sixtyseconds.chargebee.com/hosted_pages/checkout?subscription_items[item_price_id][0]=Self-Managed-EUR-Yearly&utm_source=cb-app-copy' }
+        monthly: { total: 701, deposit: null, afterKickoff: null, link: 'https://sixtyseconds.chargebee.com/hosted_pages/checkout?subscription_items[item_price_id][0]=Self-Managed-EUR-Monthly&utm_source=cb-app-copy' },
+        annual: { total: 7019, deposit: null, afterKickoff: null, link: 'https://sixtyseconds.chargebee.com/hosted_pages/checkout?subscription_items[item_price_id][0]=Self-Managed-EUR-Yearly&utm_source=cb-app-copy' }
       },
       'Growth': {
-        monthly: { total: 1169, deposit: 233, afterKickoff: 936, link: 'https://sixtyseconds.chargebee.com/hosted_pages/checkout?subscription_items[item_price_id][0]=Onboarding-Reserve-EUR-Monthly&utm_source=cb-app-copy' },
-        annual: { total: 11688, deposit: 2337, afterKickoff: 9351, link: 'https://sixtyseconds.chargebee.com/hosted_pages/checkout?subscription_items[item_price_id][0]=Onboarding-Reserve-EUR-Yearly&utm_source=cb-app-copy' }
+        monthly: { total: 2339, deposit: 467, afterKickoff: 1872, link: 'https://sixtyseconds.chargebee.com/hosted_pages/checkout?subscription_items[item_price_id][0]=Onboarding-Reserve-EUR-Monthly&utm_source=cb-app-copy' },
+        annual: { total: 27364, deposit: 5472, afterKickoff: 21892, link: 'https://sixtyseconds.chargebee.com/hosted_pages/checkout?subscription_items[item_price_id][0]=Onboarding-Reserve-EUR-Yearly&utm_source=cb-app-copy' }
       },
       'Scale': {
-        monthly: { total: 1988, deposit: 397, afterKickoff: 1591, link: 'https://sixtyseconds.chargebee.com/hosted_pages/checkout?subscription_items[item_price_id][0]=Onboarding-Reserve---Scale-EUR-Monthly&utm_source=cb-app-copy' },
-        annual: { total: 19878, deposit: 3975, afterKickoff: 15903, link: 'https://sixtyseconds.chargebee.com/hosted_pages/checkout?subscription_items[item_price_id][0]=Onboarding-Reserve---Scale-EUR-Yearly&utm_source=cb-app-copy' }
+        monthly: { total: 3158, deposit: 631, afterKickoff: 2527, link: 'https://sixtyseconds.chargebee.com/hosted_pages/checkout?subscription_items[item_price_id][0]=Onboarding-Reserve---Scale-EUR-Monthly&utm_source=cb-app-copy' },
+        annual: { total: 31578, deposit: 6315, afterKickoff: 25263, link: 'https://sixtyseconds.chargebee.com/hosted_pages/checkout?subscription_items[item_price_id][0]=Onboarding-Reserve---Scale-EUR-Yearly&utm_source=cb-app-copy' }
       }
     }
   };
@@ -1195,133 +1195,6 @@ Timestamp: ${new Date().toLocaleString()}`;
 
   return (
     <div className="h-screen bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-[#1a1a2e] via-[#1a1a2e] to-black text-white overflow-y-auto overflow-x-hidden relative [&::-webkit-scrollbar]:w-2 [&::-webkit-scrollbar-track]:bg-black/20 [&::-webkit-scrollbar-thumb]:bg-white/10 [&::-webkit-scrollbar-thumb]:rounded-full">
-      {/* Price Increase Countdown Header - Only on Pricing Page */}
-      {showPricing && (
-        <motion.div 
-          initial={{ y: -50, opacity: 0 }}
-          animate={{ y: 0, opacity: 1 }}
-          transition={{ duration: 0.5, ease: "easeOut" }}
-          className="fixed top-0 left-0 right-0 z-50 bg-gradient-to-r from-[#8129D7]/10 via-[#2A5EDB]/10 to-[#8129D7]/10 backdrop-blur-xl border-b border-white/10"
-        >
-          <div className="max-w-7xl mx-auto px-3 py-3 sm:px-4 sm:py-4">
-            {/* Desktop Layout */}
-            <div className="hidden md:flex items-center justify-center gap-6 text-center">
-              <motion.div 
-                animate={{ 
-                  scale: [1, 1.05, 1],
-                }}
-                transition={{ 
-                  duration: 3, 
-                  repeat: Infinity,
-                  ease: "easeInOut"
-                }}
-                className="flex items-center gap-3"
-              >
-                <div className="p-2 rounded-full bg-gradient-to-r from-[#8129D7]/20 to-[#2A5EDB]/20 backdrop-blur-sm">
-                  <Sparkles className="w-5 h-5 text-[#8129D7]" />
-                </div>
-                <span className="text-white/90 font-medium text-lg">
-                  Current pricing ends soon
-                </span>
-              </motion.div>
-              
-              <div className="w-px h-8 bg-white/20" />
-              
-              <div className="flex items-center gap-3 text-white">
-                <Clock className="w-5 h-5 text-[#2A5EDB]" />
-                <span className="text-white/80 font-medium">Secure your rate:</span>
-                <div className="flex items-center gap-2 font-mono">
-                  <div className="px-3 py-2 rounded-lg bg-white/5 border border-white/10 backdrop-blur-sm">
-                    <span className="text-white font-bold text-lg">
-                      {timeRemaining.days.toString().padStart(2, '0')}
-                    </span>
-                    <span className="text-white/60 text-sm ml-1">d</span>
-                  </div>
-                  <span className="text-white/40">:</span>
-                  <div className="px-3 py-2 rounded-lg bg-white/5 border border-white/10 backdrop-blur-sm">
-                    <span className="text-white font-bold text-lg">
-                      {timeRemaining.hours.toString().padStart(2, '0')}
-                    </span>
-                    <span className="text-white/60 text-sm ml-1">h</span>
-                  </div>
-                  <span className="text-white/40">:</span>
-                  <div className="px-3 py-2 rounded-lg bg-white/5 border border-white/10 backdrop-blur-sm">
-                    <span className="text-white font-bold text-lg">
-                      {timeRemaining.minutes.toString().padStart(2, '0')}
-                    </span>
-                    <span className="text-white/60 text-sm ml-1">m</span>
-                  </div>
-                  <span className="text-white/40">:</span>
-                  <div className="px-3 py-2 rounded-lg bg-white/5 border border-white/10 backdrop-blur-sm">
-                    <span className="text-white font-bold text-lg">
-                      {timeRemaining.seconds.toString().padStart(2, '0')}
-                    </span>
-                    <span className="text-white/60 text-sm ml-1">s</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            {/* Mobile Layout */}
-            <div className="md:hidden">
-              {/* Top Row - Title */}
-              <motion.div 
-                animate={{ 
-                  scale: [1, 1.02, 1],
-                }}
-                transition={{ 
-                  duration: 3, 
-                  repeat: Infinity,
-                  ease: "easeInOut"
-                }}
-                className="flex items-center justify-center gap-2 mb-3"
-              >
-                <div className="p-1.5 rounded-full bg-gradient-to-r from-[#8129D7]/20 to-[#2A5EDB]/20 backdrop-blur-sm">
-                  <Sparkles className="w-4 h-4 text-[#8129D7]" />
-                </div>
-                <span className="text-white/90 font-medium text-base">
-                  Pricing ends soon
-                </span>
-              </motion.div>
-              
-              {/* Bottom Row - Countdown */}
-              <div className="flex items-center justify-center gap-2 text-white">
-                <Clock className="w-4 h-4 text-[#2A5EDB]" />
-                <span className="text-white/80 text-sm font-medium mr-1">Time left:</span>
-                <div className="flex items-center gap-1 font-mono">
-                  <div className="px-2 py-1.5 rounded bg-white/5 border border-white/10 backdrop-blur-sm min-w-[44px] text-center">
-                    <span className="text-white font-bold text-base">
-                      {timeRemaining.days.toString().padStart(2, '0')}
-                    </span>
-                    <span className="text-white/60 text-xs ml-0.5">d</span>
-                  </div>
-                  <span className="text-white/40 text-sm">:</span>
-                  <div className="px-2 py-1.5 rounded bg-white/5 border border-white/10 backdrop-blur-sm min-w-[44px] text-center">
-                    <span className="text-white font-bold text-base">
-                      {timeRemaining.hours.toString().padStart(2, '0')}
-                    </span>
-                    <span className="text-white/60 text-xs ml-0.5">h</span>
-                  </div>
-                  <span className="text-white/40 text-sm">:</span>
-                  <div className="px-2 py-1.5 rounded bg-white/5 border border-white/10 backdrop-blur-sm min-w-[44px] text-center">
-                    <span className="text-white font-bold text-base">
-                      {timeRemaining.minutes.toString().padStart(2, '0')}
-                    </span>
-                    <span className="text-white/60 text-xs ml-0.5">m</span>
-                  </div>
-                  <span className="text-white/40 text-sm">:</span>
-                  <div className="px-2 py-1.5 rounded bg-white/5 border border-white/10 backdrop-blur-sm min-w-[44px] text-center">
-                    <span className="text-white font-bold text-base">
-                      {timeRemaining.seconds.toString().padStart(2, '0')}
-                    </span>
-                    <span className="text-white/60 text-xs ml-0.5">s</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </motion.div>
-      )}
 
       {/* Background Elements Container */}
       <div className="fixed inset-0 pointer-events-none z-0">
