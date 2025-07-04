@@ -570,8 +570,8 @@ const ModernShowcase = ({ currency, showPricing: initialShowPricing }) => {
       description: convertSpelling('Access to our Personalisation Technology. Perfect for teams with established email infrastructure.'),
       features: [
         {
-          name: '2000 Self-Serve AI Video Emails/month',
-          tooltip: 'Create personalised video messages with AI-powered customisation for each prospect.',
+          name: '2000 Self-Serve AI Video Emails/month (after setup)',
+          tooltip: 'Create personalised video messages with AI-powered customisation for each prospect. Available after the initial setup period.',
           included: true
         },
         {
@@ -638,6 +638,11 @@ const ModernShowcase = ({ currency, showPricing: initialShowPricing }) => {
           name: 'Managed Replies',
           tooltip: 'Our internal team monitor and reply to prospect messages on time.',
           included: false
+        },
+        {
+          name: 'Multi-Channel Ad Management',
+          tooltip: `We can run our campaigns on Facebook or LinkedIn (Ad spend not included and limited to ${selectedCurrency === 'USD' ? '$12,700' : selectedCurrency === 'EUR' ? '€11,700' : '£10,000'}pm).`,
+          included: false
         }
       ],
       gradient: 'from-[#8129D7]/40 to-[#9747FF]/40',
@@ -648,8 +653,8 @@ const ModernShowcase = ({ currency, showPricing: initialShowPricing }) => {
       description: 'Ideal for SMEs scaling engagement & automation',
       features: [
         {
-          name: '4,000 AI Video Emails/month',
-          tooltip: convertSpelling('We generate and send personalised AI-crafted emails with embedded video content.'),
+          name: '4,000 AI Video Emails/month (after setup)',
+          tooltip: convertSpelling('We generate and send personalised AI-crafted emails with embedded video content. Available after the initial setup period.'),
           included: true
         },
         {
@@ -716,6 +721,11 @@ const ModernShowcase = ({ currency, showPricing: initialShowPricing }) => {
           name: 'Managed Replies',
           tooltip: 'Our internal team monitor and reply to prospect messages on time.',
           included: false
+        },
+        {
+          name: 'Multi-Channel Ad Management',
+          tooltip: `We can run our campaigns on Facebook or LinkedIn (Ad spend not included and limited to ${selectedCurrency === 'USD' ? '$12,700' : selectedCurrency === 'EUR' ? '€11,700' : '£10,000'}pm).`,
+          included: false
         }
       ],
       gradient: 'from-[#2A5EDB]/40 to-[#4C7AE6]/40',
@@ -727,8 +737,8 @@ const ModernShowcase = ({ currency, showPricing: initialShowPricing }) => {
       description: 'For high-volume, multi-channel outreach',
       features: [
         {
-          name: '10,000 AI Video Emails/month',
-          tooltip: convertSpelling('We generate and send personalised AI-crafted emails with embedded video content.'),
+          name: '10,000 AI Video Emails/month (after setup)',
+          tooltip: convertSpelling('We generate and send personalised AI-crafted emails with embedded video content. Available after the initial setup period.'),
           included: true
         },
         {
@@ -798,7 +808,7 @@ const ModernShowcase = ({ currency, showPricing: initialShowPricing }) => {
         },
         {
           name: 'Multi-Channel Ad Management',
-          tooltip: 'We run your LinkedIn and Facebook advertising campaigns (ad spend not included).',
+          tooltip: `We can run our campaigns on Facebook or LinkedIn (Ad spend not included and limited to ${selectedCurrency === 'USD' ? '$12,700' : selectedCurrency === 'EUR' ? '€11,700' : '£10,000'}pm).`,
           included: true
         }
       ],
@@ -844,8 +854,8 @@ const ModernShowcase = ({ currency, showPricing: initialShowPricing }) => {
   // Scroll to pricing section
   const scrollToPricing = () => {
     // Calculate scroll position to bring pricing grid to top
-    // Account for countdown header (80px) + small padding (20px)
-    const headerHeight = 100;
+    // Small padding at top
+    const headerHeight = 20;
     
     // Find pricing grid element
     const pricingSection = document.querySelector('[data-pricing-section]');
@@ -1240,7 +1250,7 @@ Timestamp: ${new Date().toLocaleString()}`;
       </div>
       
       {/* Content Wrapper with 96% scale */}
-      <div className={`mx-auto max-w-[96%] h-[96%] transform scale-96 origin-top ${showPricing ? 'pt-20 md:pt-24' : ''}`}>
+      <div className={`mx-auto max-w-[96%] h-[96%] transform scale-96 origin-top`}>
         <AnimatePresence mode="wait">
           {currentStep === 'challenges' && (
             <LayoutGroup>
