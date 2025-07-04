@@ -854,8 +854,8 @@ const ModernShowcase = ({ currency, showPricing: initialShowPricing }) => {
   // Scroll to pricing section
   const scrollToPricing = () => {
     // Calculate scroll position to bring pricing grid to top
-    // Account for countdown header (80px) + small padding (20px)
-    const headerHeight = 100;
+    // Small padding at top
+    const headerHeight = 20;
     
     // Find pricing grid element
     const pricingSection = document.querySelector('[data-pricing-section]');
@@ -1250,7 +1250,7 @@ Timestamp: ${new Date().toLocaleString()}`;
       </div>
       
       {/* Content Wrapper with 96% scale */}
-      <div className={`mx-auto max-w-[96%] h-[96%] transform scale-96 origin-top ${showPricing ? 'pt-20 md:pt-24' : ''}`}>
+      <div className={`mx-auto max-w-[96%] h-[96%] transform scale-96 origin-top`}>
         <AnimatePresence mode="wait">
           {currentStep === 'challenges' && (
             <LayoutGroup>
