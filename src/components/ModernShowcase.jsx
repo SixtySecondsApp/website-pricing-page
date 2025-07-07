@@ -724,8 +724,8 @@ const ModernShowcase = ({ currency, showPricing: initialShowPricing }) => {
         },
         {
           name: 'Multi-Channel Ad Management',
-          tooltip: `We can run our campaigns on Facebook or LinkedIn (Ad spend not included and limited to ${selectedCurrency === 'USD' ? '$12,700' : selectedCurrency === 'EUR' ? '€11,700' : '£10,000'}pm).`,
-          included: false
+          tooltip: `We strategically test and optimise up to 2 channels. Initial ad spend included with your plan, plus you can add up to ${selectedCurrency === 'USD' ? '$6,350' : selectedCurrency === 'EUR' ? '€5,850' : '£5,000'} per month for expanded reach.`,
+          included: true
         }
       ],
       gradient: 'from-[#2A5EDB]/40 to-[#4C7AE6]/40',
@@ -808,7 +808,7 @@ const ModernShowcase = ({ currency, showPricing: initialShowPricing }) => {
         },
         {
           name: 'Multi-Channel Ad Management',
-          tooltip: `We can run our campaigns on Facebook or LinkedIn (Ad spend not included and limited to ${selectedCurrency === 'USD' ? '$12,700' : selectedCurrency === 'EUR' ? '€11,700' : '£10,000'}pm).`,
+          tooltip: `We run campaigns on up to 3 channels simultaneously for maximum impact. Initial ad spend included with your plan, plus you can add up to ${selectedCurrency === 'USD' ? '$19,000' : selectedCurrency === 'EUR' ? '€17,500' : '£15,000'} per month for expanded reach across platforms.`,
           included: true
         }
       ],
