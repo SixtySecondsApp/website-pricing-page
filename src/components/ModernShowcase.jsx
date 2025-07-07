@@ -640,6 +640,11 @@ const ModernShowcase = ({ currency, showPricing: initialShowPricing }) => {
           included: false
         },
         {
+          name: `${selectedCurrency === 'USD' ? '$630' : selectedCurrency === 'EUR' ? '€580' : '£500'} Paid Media Ad Spend Included/month`,
+          tooltip: `We will build and run LinkedIn or Meta ads with up to ${selectedCurrency === 'USD' ? '$630' : selectedCurrency === 'EUR' ? '€580' : '£500'} spend per month included`,
+          included: false
+        },
+        {
           name: 'Managed Replies',
           tooltip: 'Our internal team monitor and reply to prospect messages on time.',
           included: false
@@ -723,7 +728,7 @@ const ModernShowcase = ({ currency, showPricing: initialShowPricing }) => {
           included: true
         },
         {
-          name: `${selectedCurrency === 'USD' ? '$630' : selectedCurrency === 'EUR' ? '€580' : '£500'} LinkedIn/Meta Ad Spend/month`,
+          name: `${selectedCurrency === 'USD' ? '$630' : selectedCurrency === 'EUR' ? '€580' : '£500'} Paid Media Ad Spend Included/month`,
           tooltip: `We will build and run LinkedIn or Meta ads with up to ${selectedCurrency === 'USD' ? '$630' : selectedCurrency === 'EUR' ? '€580' : '£500'} spend per month included`,
           included: true
         },
@@ -809,6 +814,11 @@ const ModernShowcase = ({ currency, showPricing: initialShowPricing }) => {
         {
           name: 'Multi-Channel Ad Management',
           tooltip: `We run campaigns on up to 3 channels simultaneously for maximum impact. Initial ad spend included with your plan, plus you can add up to ${selectedCurrency === 'USD' ? '$19,000' : selectedCurrency === 'EUR' ? '€17,500' : '£15,000'} per month for expanded reach across platforms.`,
+          included: true
+        },
+        {
+          name: `${selectedCurrency === 'USD' ? '$630' : selectedCurrency === 'EUR' ? '€580' : '£500'} Paid Media Ad Spend Included/month`,
+          tooltip: `We will build and run LinkedIn or Meta ads with up to ${selectedCurrency === 'USD' ? '$630' : selectedCurrency === 'EUR' ? '€580' : '£500'} spend per month included`,
           included: true
         },
         {
@@ -1872,24 +1882,28 @@ Timestamp: ${new Date().toLocaleString()}`;
                               )}
                               
                               {/* Universal bolt-ons for all plans */}
-                              <li className="group relative flex items-start gap-3">
-                                <Plus className="w-5 h-5 text-emerald-400 mt-0.5 flex-shrink-0" />
-                                <span className="text-sm text-white/90 leading-relaxed">
-                                  Custom CRM Integration
-                                </span>
-                                <div className="absolute left-0 -top-2 w-64 translate-y-[-100%] p-2 bg-gray-900 rounded-lg text-xs text-white opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 pointer-events-none z-50 shadow-xl border border-white/10">
-                                  Custom integrations with any CRM system beyond our standard supported platforms.
-                                </div>
-                              </li>
-                              <li className="group relative flex items-start gap-3">
-                                <Plus className="w-5 h-5 text-emerald-400 mt-0.5 flex-shrink-0" />
-                                <span className="text-sm text-white/90 leading-relaxed">
-                                  Custom Landing Page Design & Build
-                                </span>
-                                <div className="absolute left-0 -top-2 w-64 translate-y-[-100%] p-2 bg-gray-900 rounded-lg text-xs text-white opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 pointer-events-none z-50 shadow-xl border border-white/10">
-                                  Full design, build, and hosting of a completely custom landing page tailored to your brand and campaign needs.
-                                </div>
-                              </li>
+                              {plan.name !== 'Scale' && (
+                                <li className="group relative flex items-start gap-3">
+                                  <Plus className="w-5 h-5 text-emerald-400 mt-0.5 flex-shrink-0" />
+                                  <span className="text-sm text-white/90 leading-relaxed">
+                                    Custom CRM Integration
+                                  </span>
+                                  <div className="absolute left-0 -top-2 w-64 translate-y-[-100%] p-2 bg-gray-900 rounded-lg text-xs text-white opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 pointer-events-none z-50 shadow-xl border border-white/10">
+                                    Custom integrations with any CRM system beyond our standard supported platforms.
+                                  </div>
+                                </li>
+                              )}
+                              {plan.name === 'Self Managed' && (
+                                <li className="group relative flex items-start gap-3">
+                                  <Plus className="w-5 h-5 text-emerald-400 mt-0.5 flex-shrink-0" />
+                                  <span className="text-sm text-white/90 leading-relaxed">
+                                    Custom Landing Page Design & Build
+                                  </span>
+                                  <div className="absolute left-0 -top-2 w-64 translate-y-[-100%] p-2 bg-gray-900 rounded-lg text-xs text-white opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 pointer-events-none z-50 shadow-xl border border-white/10">
+                                    Full design, build, and hosting of a completely custom landing page tailored to your brand and campaign needs.
+                                  </div>
+                                </li>
+                              )}
                               <li className="group relative flex items-start gap-3">
                                 <Plus className="w-5 h-5 text-emerald-400 mt-0.5 flex-shrink-0" />
                                 <span className="text-sm text-white/90 leading-relaxed">
