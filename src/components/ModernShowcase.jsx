@@ -1807,9 +1807,11 @@ Timestamp: ${new Date().toLocaleString()}`;
                             <p className="text-white/80 text-sm leading-tight">{plan.description}</p>
                           </div>
                           
-                          {selectedCurrency === 'GBP' && plan.name !== 'Custom' && (
-                            <p className="text-white/60 text-sm mb-4">*Price excludes VAT</p>
-                          )}
+                          <div className="h-5 mb-4">
+                            {selectedCurrency === 'GBP' && plan.name !== 'Custom' && (
+                              <p className="text-white/60 text-sm">*Price excludes VAT</p>
+                            )}
+                          </div>
                           <motion.a
                             href={getCheckoutLink(plan.name, selectedCurrency, billingPeriod)}
                             target="_blank"
@@ -1854,7 +1856,7 @@ Timestamp: ${new Date().toLocaleString()}`;
                           </div>
                           
                           {/* Bolt Ons Section - Fixed Height for Alignment */}
-                          <div className="border-t border-white/10 p-6 flex-shrink-0" style={{ minHeight: '280px' }}>
+                          <div className="border-t border-white/10 p-6 flex-shrink-0 flex flex-col" style={{ minHeight: '280px' }}>
                             <p className="text-sm font-medium text-white/80 mb-4">Bolt Ons:</p>
                             <ul className="space-y-3 mb-6">
                               {/* Plan-specific bolt-ons for Self Managed */}
