@@ -640,6 +640,11 @@ const ModernShowcase = ({ currency, showPricing: initialShowPricing }) => {
           included: false
         },
         {
+          name: `${selectedCurrency === 'USD' ? '$630' : selectedCurrency === 'EUR' ? '€580' : '£500'} Paid Media Ad Spend Included/month`,
+          tooltip: `We will build and run LinkedIn or Meta ads with up to ${selectedCurrency === 'USD' ? '$630' : selectedCurrency === 'EUR' ? '€580' : '£500'} spend per month included`,
+          included: false
+        },
+        {
           name: 'Managed Replies',
           tooltip: 'Our internal team monitor and reply to prospect messages on time.',
           included: false
@@ -723,7 +728,7 @@ const ModernShowcase = ({ currency, showPricing: initialShowPricing }) => {
           included: true
         },
         {
-          name: `${selectedCurrency === 'USD' ? '$630' : selectedCurrency === 'EUR' ? '€580' : '£500'} LinkedIn/Meta Ad Spend/month`,
+          name: `${selectedCurrency === 'USD' ? '$630' : selectedCurrency === 'EUR' ? '€580' : '£500'} Paid Media Ad Spend Included/month`,
           tooltip: `We will build and run LinkedIn or Meta ads with up to ${selectedCurrency === 'USD' ? '$630' : selectedCurrency === 'EUR' ? '€580' : '£500'} spend per month included`,
           included: true
         },
@@ -809,6 +814,11 @@ const ModernShowcase = ({ currency, showPricing: initialShowPricing }) => {
         {
           name: 'Multi-Channel Ad Management',
           tooltip: `We run campaigns on up to 3 channels simultaneously for maximum impact. Initial ad spend included with your plan, plus you can add up to ${selectedCurrency === 'USD' ? '$19,000' : selectedCurrency === 'EUR' ? '€17,500' : '£15,000'} per month for expanded reach across platforms.`,
+          included: true
+        },
+        {
+          name: `${selectedCurrency === 'USD' ? '$630' : selectedCurrency === 'EUR' ? '€580' : '£500'} Paid Media Ad Spend Included/month`,
+          tooltip: `We will build and run LinkedIn or Meta ads with up to ${selectedCurrency === 'USD' ? '$630' : selectedCurrency === 'EUR' ? '€580' : '£500'} spend per month included`,
           included: true
         },
         {
