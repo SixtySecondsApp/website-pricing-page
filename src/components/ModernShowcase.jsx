@@ -1807,9 +1807,11 @@ Timestamp: ${new Date().toLocaleString()}`;
                             <p className="text-white/80 text-sm leading-tight">{plan.description}</p>
                           </div>
                           
-                          {selectedCurrency === 'GBP' && plan.name !== 'Custom' && (
-                            <p className="text-white/60 text-sm mb-4">*Price excludes VAT</p>
-                          )}
+                          <div className="h-5 mb-4">
+                            {selectedCurrency === 'GBP' && plan.name !== 'Custom' && (
+                              <p className="text-white/60 text-sm">*Price excludes VAT</p>
+                            )}
+                          </div>
                           <motion.a
                             href={getCheckoutLink(plan.name, selectedCurrency, billingPeriod)}
                             target="_blank"
@@ -1824,11 +1826,11 @@ Timestamp: ${new Date().toLocaleString()}`;
                           </motion.a>
                         </div>
                         
-                        {/* Features Section - Flexible Height */}
-                        <div className="border-t border-white/10 flex-1 flex flex-col">
-                          <div className="p-6 flex-1">
+                        {/* Features Section */}
+                        <div className="border-t border-white/10">
+                          <div className="p-6">
                             <p className="text-sm font-medium text-white/80 mb-4">What's included:</p>
-                            <ul className="space-y-3 mb-6">
+                            <ul className="space-y-3">
                               {plan.features.map((feature, i) => (
                                 <li key={i} className="group relative flex items-start gap-3">
                                   {feature.included ? (
@@ -1853,10 +1855,26 @@ Timestamp: ${new Date().toLocaleString()}`;
                             </ul>
                           </div>
                           
-                          {/* Bolt Ons Section - Fixed Height for Alignment */}
-                          <div className="border-t border-white/10 p-6 flex-shrink-0" style={{ minHeight: '280px' }}>
+                          {/* Get Started Button */}
+                          <div className="px-6 pb-6">
+                            <motion.a
+                              href={getCheckoutLink(plan.name, selectedCurrency, billingPeriod)}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              whileHover={{ scale: 1.02 }}
+                              whileTap={{ scale: 0.98 }}
+                              className={`block w-full py-3 rounded-lg bg-gradient-to-r ${plan.buttonGradient} 
+                                text-white font-medium shadow-lg transition-all duration-300 border border-white/10 hover:border-transparent
+                                hover:shadow-[0_0_20px_rgba(255,255,255,0.15)] text-center`}
+                            >
+                              Get Started
+                            </motion.a>
+                          </div>
+                          
+                          {/* Bolt Ons Section */}
+                          <div className="border-t border-white/10 p-6 flex-shrink-0">
                             <p className="text-sm font-medium text-white/80 mb-4">Bolt Ons:</p>
-                            <ul className="space-y-3 mb-6">
+                            <ul className="space-y-3">
                               {/* Plan-specific bolt-ons for Self Managed */}
                               {plan.name === 'Self Managed' && (
                                 <>
@@ -1932,22 +1950,6 @@ Timestamp: ${new Date().toLocaleString()}`;
                                 </div>
                               </li>
                             </ul>
-                            
-                            {/* Bottom Get Started Button */}
-                            <div className="mt-auto">
-                              <motion.a
-                                href={getCheckoutLink(plan.name, selectedCurrency, billingPeriod)}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                whileHover={{ scale: 1.02 }}
-                                whileTap={{ scale: 0.98 }}
-                                className={`block w-full py-3 rounded-lg bg-gradient-to-r ${plan.buttonGradient} 
-                                  text-white font-medium shadow-lg transition-all duration-300 border border-white/10 hover:border-transparent
-                                  hover:shadow-[0_0_20px_rgba(255,255,255,0.15)] text-center`}
-                              >
-                                Get Started
-                              </motion.a>
-                            </div>
                           </div>
                         </div>
                       </motion.div>
