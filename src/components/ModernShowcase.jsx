@@ -570,7 +570,7 @@ const ModernShowcase = ({ currency, showPricing: initialShowPricing }) => {
       description: convertSpelling('Access to our Personalisation Technology. Perfect for teams with established email infrastructure.'),
       features: [
         {
-          name: '2000 Self-Serve AI Video Emails/month (after setup)',
+          name: '2,000 AI Video Emails/month (after setup)',
           tooltip: 'Create personalised video messages with AI-powered customisation for each prospect. Available after the initial setup period.',
           included: true
         },
@@ -635,13 +635,13 @@ const ModernShowcase = ({ currency, showPricing: initialShowPricing }) => {
           included: true
         },
         {
-          name: 'Managed Replies',
-          tooltip: 'Our internal team monitor and reply to prospect messages on time.',
+          name: 'Multi-Channel Ad Management',
+          tooltip: `We can run our campaigns on Facebook or LinkedIn (Ad spend not included and limited to ${selectedCurrency === 'USD' ? '$12,700' : selectedCurrency === 'EUR' ? '€11,700' : '£10,000'}pm).`,
           included: false
         },
         {
-          name: 'Multi-Channel Ad Management',
-          tooltip: `We can run our campaigns on Facebook or LinkedIn (Ad spend not included and limited to ${selectedCurrency === 'USD' ? '$12,700' : selectedCurrency === 'EUR' ? '€11,700' : '£10,000'}pm).`,
+          name: 'Managed Replies',
+          tooltip: 'Our internal team monitor and reply to prospect messages on time.',
           included: false
         }
       ],
@@ -718,13 +718,13 @@ const ModernShowcase = ({ currency, showPricing: initialShowPricing }) => {
           included: true
         },
         {
-          name: 'Managed Replies',
-          tooltip: 'Our internal team monitor and reply to prospect messages on time.',
-          included: false
+          name: 'Multi-Channel Ad Management',
+          tooltip: `We strategically test and optimise up to 2 channels. Initial ad spend included with your plan, plus you can add up to ${selectedCurrency === 'USD' ? '$6,350' : selectedCurrency === 'EUR' ? '€5,850' : '£5,000'} per month for expanded reach.`,
+          included: true
         },
         {
-          name: 'Multi-Channel Ad Management',
-          tooltip: `We can run our campaigns on Facebook or LinkedIn (Ad spend not included and limited to ${selectedCurrency === 'USD' ? '$12,700' : selectedCurrency === 'EUR' ? '€11,700' : '£10,000'}pm).`,
+          name: 'Managed Replies',
+          tooltip: 'Our internal team monitor and reply to prospect messages on time.',
           included: false
         }
       ],
@@ -802,13 +802,13 @@ const ModernShowcase = ({ currency, showPricing: initialShowPricing }) => {
           included: true
         },
         {
-          name: 'Managed Replies',
-          tooltip: 'Our internal team monitor and reply to prospect messages on time.',
+          name: 'Multi-Channel Ad Management',
+          tooltip: `We run campaigns on up to 3 channels simultaneously for maximum impact. Initial ad spend included with your plan, plus you can add up to ${selectedCurrency === 'USD' ? '$19,000' : selectedCurrency === 'EUR' ? '€17,500' : '£15,000'} per month for expanded reach across platforms.`,
           included: true
         },
         {
-          name: 'Multi-Channel Ad Management',
-          tooltip: `We can run our campaigns on Facebook or LinkedIn (Ad spend not included and limited to ${selectedCurrency === 'USD' ? '$12,700' : selectedCurrency === 'EUR' ? '€11,700' : '£10,000'}pm).`,
+          name: 'Managed Replies',
+          tooltip: 'Our internal team monitor and reply to prospect messages on time.',
           included: true
         }
       ],
