@@ -719,7 +719,12 @@ const ModernShowcase = ({ currency, showPricing: initialShowPricing }) => {
         },
         {
           name: 'Multi-Channel Ad Management',
-          tooltip: `We strategically test and optimise up to 2 channels. Initial ad spend included with your plan, plus you can add up to ${selectedCurrency === 'USD' ? '$6,350' : selectedCurrency === 'EUR' ? '€5,850' : '£5,000'} per month for expanded reach.`,
+          tooltip: `We'll strategically test and optimise up to 2 channels (email + paid ads). Your plan includes initial ad spend, and you can boost this further with up to an additional ${selectedCurrency === 'USD' ? '$6,350' : selectedCurrency === 'EUR' ? '€5,850' : '£5,000'} extra ad spend per month.`,
+          included: true
+        },
+        {
+          name: `${selectedCurrency === 'USD' ? '$630' : selectedCurrency === 'EUR' ? '€580' : '£500'} LinkedIn/Meta Ad Spend/month`,
+          tooltip: `We will build and run LinkedIn or Meta ads with up to ${selectedCurrency === 'USD' ? '$630' : selectedCurrency === 'EUR' ? '€580' : '£500'} spend per month included`,
           included: true
         },
         {
