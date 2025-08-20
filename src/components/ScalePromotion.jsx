@@ -460,7 +460,7 @@ Timestamp: ${new Date().toLocaleString()}`;
         >
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-[#8129D7]/20 to-[#2A5EDB]/20 border border-white/10 text-sm font-medium text-white/90 mb-6 backdrop-blur-sm">
             <Sparkles className="w-4 h-4 text-yellow-400" />
-            Sign up in {currentMonth} and get {adSpendValues[currency]} per month in ad spend
+            Sign up in {currentMonth} and get {adSpendValues[currency]} per month in ad spend (included after setup)
           </div>
           
           <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-6 tracking-tight">
