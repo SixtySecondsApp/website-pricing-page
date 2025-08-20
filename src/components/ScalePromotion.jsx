@@ -216,7 +216,7 @@ const ScalePromotion = ({ currency = 'GBP' }) => {
     {
       category: 'Integration & Management',
       items: [
-        'Custom CRM Integration (Salesforce & Custom API)',
+        'Custom CRM Integrations (Salesforce, HubSpot, Pipedrive & Custom APIs)',
         'Managed Replies by internal team',
         'Campaign strategy and planning',
         'Performance reviews and reporting'

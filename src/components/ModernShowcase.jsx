@@ -802,8 +802,8 @@ const ModernShowcase = ({ currency, showPricing: initialShowPricing }) => {
           included: true
         },
         {
-          name: 'Custom CRM Integration',
-          tooltip: 'All standard + Salesforce & Custom API - supported platforms.',
+          name: 'Custom CRM Integrations',
+          tooltip: 'Salesforce, HubSpot, Pipedrive, and custom API integrations - we build custom CRM integrations for any platform.',
           included: true
         },
         {
@@ -915,10 +915,14 @@ const ModernShowcase = ({ currency, showPricing: initialShowPricing }) => {
   useEffect(() => {
     const path = location.pathname;
     
-    // Handle pricing routes (both regular and currency-specific)
+    // Redirect pricing routes to Scale promotion page
     if (path === '/pricing' || path.endsWith('/pricing')) {
-      setShowPricing(true);
-      setCurrentStep('pricing');
+      // Get the currency prefix and redirect to Scale page
+      const currencyPrefix = path.includes('/UK') ? '/UK' : 
+                           path.includes('/US') ? '/US' : 
+                           path.includes('/EU') ? '/EU' : '/UK';
+      navigate(`${currencyPrefix}/scale`, { replace: true });
+      return;
     } 
     // Handle solution routes with challengeId
     else if (challengeId) {
@@ -971,7 +975,8 @@ const ModernShowcase = ({ currency, showPricing: initialShowPricing }) => {
     if (nextStep === 'solutions' && challenge) {
       navigate(`${prefix}/solutions/${challenge.id}`);
     } else if (nextStep === 'pricing') {
-      navigate(`${prefix}/pricing`);
+      // Redirect to Scale promotion page instead of old pricing
+      navigate(`${prefix}/scale`);
     } else {
       navigate(prefix || '/');
     }
@@ -1682,7 +1687,8 @@ Timestamp: ${new Date().toLocaleString()}`;
                                                currencyOption === 'EUR' ? '/EU' : '';
                               
                               if (showPricing) {
-                                navigate(`${newPrefix}/pricing`);
+                                // Redirect to Scale promotion page instead of old pricing
+                                navigate(`${newPrefix}/scale`);
                               } else if (selectedChallenge) {
                                 navigate(`${newPrefix}/solutions/${selectedChallenge.id}`);
                               } else {
@@ -1904,7 +1910,7 @@ Timestamp: ${new Date().toLocaleString()}`;
                                 <li className="group relative flex items-start gap-3">
                                   <Plus className="w-5 h-5 text-emerald-400 mt-0.5 flex-shrink-0" />
                                   <span className="text-sm text-white/90 leading-relaxed">
-                                    Custom CRM Integration
+                                    Custom CRM Integrations
                                   </span>
                                   <div className="absolute left-0 -top-2 w-64 translate-y-[-100%] p-2 bg-gray-900 rounded-lg text-xs text-white opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 pointer-events-none z-50 shadow-xl border border-white/10">
                                     Custom integrations with any CRM system beyond our standard supported platforms.

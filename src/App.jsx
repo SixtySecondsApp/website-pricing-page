@@ -32,17 +32,17 @@ function App() {
     <Routes>
       <Route path="/" element={<ModernShowcase />} />
       <Route path="/solutions/:challengeId" element={<ModernShowcase />} />
-      <Route path="/pricing" element={<ModernShowcase />} />
+      <Route path="/pricing" element={<Navigate to="/UK/scale" replace />} />
       
       {/* Currency-specific routes */}
       <Route path="/UK" element={<ModernShowcase currency="GBP" />} />
       <Route path="/US" element={<ModernShowcase currency="USD" />} />
       <Route path="/EU" element={<ModernShowcase currency="EUR" />} />
       
-      {/* Currency-specific pricing routes */}
-      <Route path="/UK/pricing" element={<ModernShowcase currency="GBP" showPricing={true} />} />
-      <Route path="/US/pricing" element={<ModernShowcase currency="USD" showPricing={true} />} />
-      <Route path="/EU/pricing" element={<ModernShowcase currency="EUR" showPricing={true} />} />
+      {/* Currency-specific pricing routes - redirect to Scale promotion */}
+      <Route path="/UK/pricing" element={<Navigate to="/UK/scale" replace />} />
+      <Route path="/US/pricing" element={<Navigate to="/US/scale" replace />} />
+      <Route path="/EU/pricing" element={<Navigate to="/EU/scale" replace />} />
       
       {/* Currency-specific Scale promotion routes */}
       <Route path="/UK/scale" element={<ScalePromotion currency="GBP" />} />
