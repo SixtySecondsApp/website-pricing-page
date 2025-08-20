@@ -690,7 +690,7 @@ Timestamp: ${new Date().toLocaleString()}`;
                     <span className="text-white/90">
                       4x 30 second Ad Videos{' '}
                       <a 
-                        href="https://www.sixtyseconds.ai/video/video-examples/video-ads" 
+                        href="https://www.sixtyseconds.ai/video-examples/video-ads" 
                         target="_blank" 
                         rel="noopener noreferrer"
                         className="text-white/60 hover:text-white underline text-sm"
