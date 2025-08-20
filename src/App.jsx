@@ -2,6 +2,7 @@ import React from 'react'
 import { Routes, Route, Navigate } from 'react-router-dom'
 import ModernShowcase from './components/ModernShowcase'
 import ScalePromotion from './components/ScalePromotion'
+import MoneyBackGuarantee from './components/MoneyBackGuarantee'
 
 /**
  * Currency-specific routes for sharing direct links to prospects:
@@ -48,6 +49,11 @@ function App() {
       <Route path="/UK/scale" element={<ScalePromotion currency="GBP" />} />
       <Route path="/US/scale" element={<ScalePromotion currency="USD" />} />
       <Route path="/EU/scale" element={<ScalePromotion currency="EUR" />} />
+      
+      {/* Currency-specific Money-back guarantee routes */}
+      <Route path="/UK/guarantee" element={<MoneyBackGuarantee currency="GBP" />} />
+      <Route path="/US/guarantee" element={<MoneyBackGuarantee currency="USD" />} />
+      <Route path="/EU/guarantee" element={<MoneyBackGuarantee currency="EUR" />} />
       
       {/* Currency-specific solution routes */}
       <Route path="/UK/solutions/:challengeId" element={<ModernShowcase currency="GBP" />} />

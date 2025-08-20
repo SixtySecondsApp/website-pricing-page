@@ -719,6 +719,15 @@ Timestamp: ${new Date().toLocaleString()}`;
                 Reserve Your Spot Now
               </motion.button>
               
+              <div className="mt-3">
+                <a 
+                  href={`/${currency === 'GBP' ? 'UK' : currency === 'USD' ? 'US' : 'EU'}/guarantee`}
+                  className="text-sm text-white/60 hover:text-white/80 underline transition-colors duration-200"
+                >
+                  💯 Money-back guarantee
+                </a>
+              </div>
+              
               <div>
                 <button
                   onClick={() => setShowContactModal(true)}
