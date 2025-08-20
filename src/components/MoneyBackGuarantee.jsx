@@ -133,7 +133,7 @@ const MoneyBackGuarantee = ({ currency = 'GBP' }) => {
           </motion.button>
           
           <p className="text-xs text-white/40 mt-6">
-            This guarantee applies to the initial deposit payment only and is valid until the kick-off call is completed. 
+            This guarantee applies to the initial deposit payment only and is valid before the kick-off call commences. 
             Standard terms and conditions apply.
           </p>
         </motion.div>
