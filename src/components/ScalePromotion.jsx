@@ -503,8 +503,8 @@ Timestamp: ${new Date().toLocaleString()}`;
             <div className="flex flex-col sm:flex-row gap-4 mb-10">
               {[
                 { months: '3', label: '3 Months', description: 'Minimum term' },
-                { months: '6', label: '6 Months', description: '10% OFF + 1 Free 30 Second Video', popular: true },
-                { months: '12', label: '12 Months', description: '20% OFF + 2 Free 30 Second Videos', upfront: true }
+                { months: '6', label: '6 Months', description: '10% + 1 Free Video Ad', popular: true },
+                { months: '12', label: '12 Months', description: '20% + 2 Free Video Ads', upfront: true }
               ].map((term) => (
                 <motion.button
                   key={term.months}
