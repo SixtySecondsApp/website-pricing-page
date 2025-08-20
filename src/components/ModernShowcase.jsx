@@ -965,7 +965,8 @@ const ModernShowcase = ({ currency, showPricing: initialShowPricing }) => {
     if (currency === 'GBP') return '/UK';
     if (currency === 'USD') return '/US';
     if (currency === 'EUR') return '/EU';
-    return '';
+    // Default to UK if no currency is set
+    return '/UK';
   };
 
   // Update navigation handlers
@@ -978,7 +979,7 @@ const ModernShowcase = ({ currency, showPricing: initialShowPricing }) => {
       // Redirect to Scale promotion page instead of old pricing
       navigate(`${prefix}/scale`);
     } else {
-      navigate(prefix || '/');
+      navigate(prefix || '/UK');
     }
   };
 

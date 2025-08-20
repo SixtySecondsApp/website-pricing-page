@@ -19,6 +19,16 @@ const ScalePromotion = ({ currency = 'GBP' }) => {
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState(null);
+  
+  // Get current month name
+  const currentMonth = new Date().toLocaleString('default', { month: 'long' });
+  
+  // Ad spend equivalent values per currency
+  const adSpendValues = {
+    GBP: '£500',
+    USD: '$635',
+    EUR: '€585'
+  };
 
   // Currency symbols and rates
   const currencyData = {
@@ -392,11 +402,11 @@ Timestamp: ${new Date().toLocaleString()}`;
 
       {/* Content Wrapper */}
       <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-8">
-        {/* Header with Back Button */}
+        {/* Header with Back Button and Currency Toggle */}
         <motion.div 
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
-          className="flex items-center justify-between mb-4"
+          className="flex items-center justify-between mb-8"
         >
           <button
             onClick={() => navigate(`/${currency}`)}
@@ -405,22 +415,12 @@ Timestamp: ${new Date().toLocaleString()}`;
             <ArrowLeft className="w-4 h-4" />
             Back to Main
           </button>
-          <div className="text-xs font-normal text-white/40 bg-white/5 px-3 py-2 rounded-md backdrop-blur-sm border border-white/10">
-            {currencyData[currency].name}
-          </div>
-        </motion.div>
-
-        {/* Currency Toggle */}
-        <motion.div 
-          initial={{ opacity: 0, y: -20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.05 }}
-          className="flex justify-center mb-8"
-        >
+          
+          {/* Currency Toggle - moved to top right */}
           <div className="inline-flex items-center gap-2 p-1 bg-white/10 backdrop-blur-xl rounded-full border border-white/20">
             <button
               onClick={() => navigate('/UK/scale')}
-              className={`px-4 py-2 rounded-full transition-all duration-300 font-medium text-sm ${
+              className={`px-3 py-1.5 rounded-full transition-all duration-300 font-medium text-sm ${
                 currency === 'GBP' 
                   ? 'bg-[#8129D7] text-white shadow-lg shadow-[#8129D7]/30' 
                   : 'text-white/60 hover:text-white hover:bg-white/10'
@@ -430,7 +430,7 @@ Timestamp: ${new Date().toLocaleString()}`;
             </button>
             <button
               onClick={() => navigate('/US/scale')}
-              className={`px-4 py-2 rounded-full transition-all duration-300 font-medium text-sm ${
+              className={`px-3 py-1.5 rounded-full transition-all duration-300 font-medium text-sm ${
                 currency === 'USD' 
                   ? 'bg-[#8129D7] text-white shadow-lg shadow-[#8129D7]/30' 
                   : 'text-white/60 hover:text-white hover:bg-white/10'
@@ -440,7 +440,7 @@ Timestamp: ${new Date().toLocaleString()}`;
             </button>
             <button
               onClick={() => navigate('/EU/scale')}
-              className={`px-4 py-2 rounded-full transition-all duration-300 font-medium text-sm ${
+              className={`px-3 py-1.5 rounded-full transition-all duration-300 font-medium text-sm ${
                 currency === 'EUR' 
                   ? 'bg-[#8129D7] text-white shadow-lg shadow-[#8129D7]/30' 
                   : 'text-white/60 hover:text-white hover:bg-white/10'
@@ -460,7 +460,7 @@ Timestamp: ${new Date().toLocaleString()}`;
         >
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-[#8129D7]/20 to-[#2A5EDB]/20 border border-white/10 text-sm font-medium text-white/90 mb-6 backdrop-blur-sm">
             <Sparkles className="w-4 h-4 text-yellow-400" />
-            Limited Time Scale Plan Promotion
+            Sign up in {currentMonth} and get {adSpendValues[currency]} per month in ad spend
           </div>
           
           <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-6 tracking-tight">
