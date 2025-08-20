@@ -14,11 +14,12 @@ const MoneyBackGuarantee = ({ currency = 'GBP' }) => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-900 via-[#8129D7]/20 to-gray-900 relative overflow-hidden">
-      {/* Background animations */}
-      <div className="absolute inset-0">
-        <div className="absolute w-[600px] h-[600px] bg-[#8129D7]/20 rounded-full blur-[120px] top-[-200px] left-[-200px] animate-pulse" />
-        <div className="absolute w-[600px] h-[600px] bg-[#03AD9C]/20 rounded-full blur-[120px] bottom-[-200px] right-[-200px] animate-pulse animation-delay-2000" />
+    <div className="min-h-screen bg-gray-900 relative overflow-hidden">
+      {/* Background animations with darker colors */}
+      <div className="absolute inset-0 bg-gradient-to-br from-gray-900 via-[#8129D7]/10 to-gray-900">
+        <div className="absolute w-[600px] h-[600px] bg-[#8129D7]/15 rounded-full blur-[120px] top-[-200px] left-[-200px] animate-pulse" />
+        <div className="absolute w-[600px] h-[600px] bg-[#03AD9C]/15 rounded-full blur-[120px] bottom-[-200px] right-[-200px] animate-pulse animation-delay-2000" />
+        <div className="absolute w-[600px] h-[600px] bg-[#2A5EDB]/15 rounded-full blur-[120px] top-[50%] left-[50%] transform -translate-x-1/2 -translate-y-1/2 animate-pulse animation-delay-4000" />
       </div>
 
       {/* Content */}
@@ -31,7 +32,7 @@ const MoneyBackGuarantee = ({ currency = 'GBP' }) => {
         >
           <button
             onClick={() => navigate(`/${currency === 'GBP' ? 'UK' : currency === 'USD' ? 'US' : 'EU'}/scale`)}
-            className="flex items-center gap-2 px-4 py-2 rounded-lg bg-white/10 hover:bg-white/20 backdrop-blur-sm border border-white/10 hover:border-white/20 transition-all duration-300 text-white font-medium"
+            className="flex items-center gap-2 px-4 py-2 rounded-lg bg-gray-800/80 hover:bg-gray-700/80 backdrop-blur-sm border border-white/20 hover:border-white/30 transition-all duration-300 text-white font-medium"
           >
             <ArrowLeft className="w-4 h-4" />
             Back to Scale Promotion
@@ -45,7 +46,7 @@ const MoneyBackGuarantee = ({ currency = 'GBP' }) => {
           transition={{ delay: 0.1 }}
           className="text-center mb-16"
         >
-          <div className="inline-flex items-center justify-center w-20 h-20 rounded-full bg-gradient-to-r from-[#8129D7]/20 to-[#03AD9C]/20 border border-white/10 mb-6">
+          <div className="inline-flex items-center justify-center w-20 h-20 rounded-full bg-gradient-to-r from-[#8129D7]/30 to-[#03AD9C]/30 border border-white/20 mb-6 shadow-lg">
             <Shield className="w-10 h-10 text-white" />
           </div>
           
@@ -65,7 +66,7 @@ const MoneyBackGuarantee = ({ currency = 'GBP' }) => {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.2 }}
-          className="bg-white/5 backdrop-blur-xl rounded-2xl border border-white/10 p-8 md:p-12 mb-12"
+          className="bg-gray-900/60 backdrop-blur-xl rounded-2xl border border-white/20 p-8 md:p-12 mb-12 shadow-2xl"
         >
           <h2 className="text-2xl md:text-3xl font-bold text-white mb-6">Our Promise to You</h2>
           
