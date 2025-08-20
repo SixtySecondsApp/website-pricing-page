@@ -1,6 +1,7 @@
 import React from 'react'
 import { Routes, Route, Navigate } from 'react-router-dom'
 import ModernShowcase from './components/ModernShowcase'
+import ScalePromotion from './components/ScalePromotion'
 
 /**
  * Currency-specific routes for sharing direct links to prospects:
@@ -14,6 +15,11 @@ import ModernShowcase from './components/ModernShowcase'
  * - /UK/pricing - UK pricing page
  * - /US/pricing - US pricing page  
  * - /EU/pricing - EU pricing page
+ * 
+ * Scale promotion pages:
+ * - /UK/scale - UK Scale plan promotion page
+ * - /US/scale - US Scale plan promotion page
+ * - /EU/scale - EU Scale plan promotion page
  * 
  * Solution pages:
  * - /UK/solutions/:challengeId - UK solution pages
@@ -37,6 +43,11 @@ function App() {
       <Route path="/UK/pricing" element={<ModernShowcase currency="GBP" showPricing={true} />} />
       <Route path="/US/pricing" element={<ModernShowcase currency="USD" showPricing={true} />} />
       <Route path="/EU/pricing" element={<ModernShowcase currency="EUR" showPricing={true} />} />
+      
+      {/* Currency-specific Scale promotion routes */}
+      <Route path="/UK/scale" element={<ScalePromotion currency="GBP" />} />
+      <Route path="/US/scale" element={<ScalePromotion currency="USD" />} />
+      <Route path="/EU/scale" element={<ScalePromotion currency="EUR" />} />
       
       {/* Currency-specific solution routes */}
       <Route path="/UK/solutions/:challengeId" element={<ModernShowcase currency="GBP" />} />
