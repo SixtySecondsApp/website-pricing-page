@@ -396,7 +396,7 @@ Timestamp: ${new Date().toLocaleString()}`;
         <motion.div 
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
-          className="flex items-center justify-between mb-8"
+          className="flex items-center justify-between mb-4"
         >
           <button
             onClick={() => navigate(`/${currency}`)}
@@ -407,6 +407,47 @@ Timestamp: ${new Date().toLocaleString()}`;
           </button>
           <div className="text-xs font-normal text-white/40 bg-white/5 px-3 py-2 rounded-md backdrop-blur-sm border border-white/10">
             {currencyData[currency].name}
+          </div>
+        </motion.div>
+
+        {/* Currency Toggle */}
+        <motion.div 
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.05 }}
+          className="flex justify-center mb-8"
+        >
+          <div className="inline-flex items-center gap-2 p-1 bg-white/10 backdrop-blur-xl rounded-full border border-white/20">
+            <button
+              onClick={() => navigate('/UK/scale')}
+              className={`px-4 py-2 rounded-full transition-all duration-300 font-medium text-sm ${
+                currency === 'GBP' 
+                  ? 'bg-[#8129D7] text-white shadow-lg shadow-[#8129D7]/30' 
+                  : 'text-white/60 hover:text-white hover:bg-white/10'
+              }`}
+            >
+              🇬🇧 UK
+            </button>
+            <button
+              onClick={() => navigate('/US/scale')}
+              className={`px-4 py-2 rounded-full transition-all duration-300 font-medium text-sm ${
+                currency === 'USD' 
+                  ? 'bg-[#8129D7] text-white shadow-lg shadow-[#8129D7]/30' 
+                  : 'text-white/60 hover:text-white hover:bg-white/10'
+              }`}
+            >
+              🇺🇸 US
+            </button>
+            <button
+              onClick={() => navigate('/EU/scale')}
+              className={`px-4 py-2 rounded-full transition-all duration-300 font-medium text-sm ${
+                currency === 'EUR' 
+                  ? 'bg-[#8129D7] text-white shadow-lg shadow-[#8129D7]/30' 
+                  : 'text-white/60 hover:text-white hover:bg-white/10'
+              }`}
+            >
+              🇪🇺 EU
+            </button>
           </div>
         </motion.div>
 
