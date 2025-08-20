@@ -724,7 +724,7 @@ Timestamp: ${new Date().toLocaleString()}`;
                   href={`/${currency === 'GBP' ? 'UK' : currency === 'USD' ? 'US' : 'EU'}/guarantee`}
                   className="text-sm text-white/60 hover:text-white/80 underline transition-colors duration-200"
                 >
-                  💯 Money-back guarantee
+                  💯 Money-back guarantee*
                 </a>
               </div>
               
@@ -777,6 +777,24 @@ Timestamp: ${new Date().toLocaleString()}`;
               </motion.div>
             ))}
           </div>
+        </motion.div>
+
+        {/* Terms and Conditions Note */}
+        <motion.div 
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.5 }}
+          className="text-center mt-16 pb-8"
+        >
+          <p className="text-xs text-white/40">
+            * Terms and conditions apply.{' '}
+            <a 
+              href={`/${currency === 'GBP' ? 'UK' : currency === 'USD' ? 'US' : 'EU'}/guarantee`}
+              className="text-white/50 hover:text-white/70 underline transition-colors duration-200"
+            >
+              View money-back guarantee details
+            </a>
+          </p>
         </motion.div>
 
         {/* Contact Modal */}
