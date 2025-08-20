@@ -180,7 +180,7 @@ const ScalePromotion = ({ currency = 'GBP' }) => {
     {
       category: 'Video & Email Outreach',
       items: [
-        '10,000 AI Video Emails/month (after setup)',
+        'Up to 10,000 AI Video Emails/month (after setup)',
         'Custom Landing Page with your branding',
         convertSpelling('Hyper Personalisation for each prospect'),
         'Pro AI Voice Clone technology'
@@ -462,8 +462,8 @@ Timestamp: ${new Date().toLocaleString()}`;
             <div className="flex flex-col sm:flex-row gap-4 mb-10">
               {[
                 { months: '3', label: '3 Months', description: 'Minimum term' },
-                { months: '6', label: '6 Months', description: '10% OFF + 1 Free Video', popular: true },
-                { months: '12', label: '12 Months', description: '20% OFF + 2 Free Videos' }
+                { months: '6', label: '6 Months', description: '10% OFF + 1 Free 30 Second Video', popular: true },
+                { months: '12', label: '12 Months', description: '20% OFF + 2 Free 30 Second Videos', upfront: true }
               ].map((term) => (
                 <motion.button
                   key={term.months}
@@ -486,6 +486,9 @@ Timestamp: ${new Date().toLocaleString()}`;
                   
                   <div className="text-white text-lg font-bold mb-2">{term.label}</div>
                   <div className="text-white/60 text-sm">{term.description}</div>
+                  {term.upfront && (
+                    <div className="text-cyan-400 text-xs mt-2 font-medium">Paid upfront</div>
+                  )}
                 </motion.button>
               ))}
             </div>
@@ -495,50 +498,83 @@ Timestamp: ${new Date().toLocaleString()}`;
               <div className="space-y-4">
                 <h3 className="text-xl font-semibold text-white mb-4">Monthly Payment Structure</h3>
                 
-                <div className="py-3 border-b border-white/10">
-                  <div className="text-white/60 text-sm mb-2">Month 1 (Setup & Onboarding):</div>
-                  <div className="space-y-2 ml-4">
-                    <div className="flex justify-between items-center">
-                      <span className="text-white/80">Deposit (20% upfront)</span>
-                      <span className="text-white font-mono">
-                        {pricing.symbol}{Math.round(pricing.depositExVAT).toLocaleString()}
-                        {pricing.hasVAT && <span className="text-white/60 text-sm"> +VAT</span>}
-                      </span>
-                    </div>
-                    <div className="flex justify-between items-center">
-                      <span className="text-white/80">After kickoff call (80%)</span>
-                      <span className="text-white font-mono">
-                        {pricing.symbol}{Math.round(pricing.afterKickoffExVAT).toLocaleString()}
-                        {pricing.hasVAT && <span className="text-white/60 text-sm"> +VAT</span>}
-                      </span>
-                    </div>
-                    <div className="flex justify-between items-center pt-2 border-t border-white/5">
-                      <span className="text-white font-medium">Month 1 Total</span>
-                      <span className="text-white font-mono font-medium">
-                        {pricing.symbol}{Math.round(pricing.monthlyExVAT).toLocaleString()}
-                        {pricing.hasVAT && <span className="text-white/60 text-sm"> +VAT</span>}
-                      </span>
-                    </div>
-                  </div>
-                </div>
-                
-                <div className="flex justify-between items-center py-3 border-b border-white/10">
-                  <span className="text-white/80">Monthly payment (Month 2 onwards)</span>
-                  <div className="text-right">
-                    {pricing.discount > 0 && (
-                      <div>
-                        <span className="text-white/60 line-through font-mono text-sm">
-                          {pricing.symbol}{scalePricing[currency].monthly.toLocaleString()}
-                          {pricing.hasVAT && <span className="text-white/60 text-xs"> +VAT</span>}
+                {selectedTerm === '12' ? (
+                  // 12-month upfront payment structure
+                  <div className="py-3 border-b border-white/10">
+                    <div className="text-white/60 text-sm mb-2">12 Months Paid Upfront:</div>
+                    <div className="space-y-2 ml-4">
+                      <div className="flex justify-between items-center">
+                        <span className="text-white/80">Deposit (20% upfront)</span>
+                        <span className="text-white font-mono">
+                          {pricing.symbol}{Math.round(pricing.totalExVAT * 0.20).toLocaleString()}
+                          {pricing.hasVAT && <span className="text-white/60 text-sm"> +VAT</span>}
                         </span>
                       </div>
-                    )}
-                    <span className="text-white font-mono">
-                      {pricing.symbol}{Math.round(pricing.monthlyExVAT).toLocaleString()}
-                      {pricing.hasVAT && <span className="text-white/60 text-sm"> +VAT</span>}
-                    </span>
+                      <div className="flex justify-between items-center">
+                        <span className="text-white/80">After kickoff call (80%)</span>
+                        <span className="text-white font-mono">
+                          {pricing.symbol}{Math.round(pricing.totalExVAT * 0.80).toLocaleString()}
+                          {pricing.hasVAT && <span className="text-white/60 text-sm"> +VAT</span>}
+                        </span>
+                      </div>
+                      <div className="flex justify-between items-center pt-2 border-t border-white/5">
+                        <span className="text-white font-medium">12 Months Total</span>
+                        <span className="text-white font-mono font-medium">
+                          {pricing.symbol}{Math.round(pricing.totalExVAT).toLocaleString()}
+                          {pricing.hasVAT && <span className="text-white/60 text-sm"> +VAT</span>}
+                        </span>
+                      </div>
+                    </div>
                   </div>
-                </div>
+                ) : (
+                  // 3 and 6 month monthly payment structure
+                  <>
+                    <div className="py-3 border-b border-white/10">
+                      <div className="text-white/60 text-sm mb-2">Month 1 (Setup & Onboarding):</div>
+                      <div className="space-y-2 ml-4">
+                        <div className="flex justify-between items-center">
+                          <span className="text-white/80">Deposit (20% upfront)</span>
+                          <span className="text-white font-mono">
+                            {pricing.symbol}{Math.round(pricing.depositExVAT).toLocaleString()}
+                            {pricing.hasVAT && <span className="text-white/60 text-sm"> +VAT</span>}
+                          </span>
+                        </div>
+                        <div className="flex justify-between items-center">
+                          <span className="text-white/80">After kickoff call (80%)</span>
+                          <span className="text-white font-mono">
+                            {pricing.symbol}{Math.round(pricing.afterKickoffExVAT).toLocaleString()}
+                            {pricing.hasVAT && <span className="text-white/60 text-sm"> +VAT</span>}
+                          </span>
+                        </div>
+                        <div className="flex justify-between items-center pt-2 border-t border-white/5">
+                          <span className="text-white font-medium">Month 1 Total</span>
+                          <span className="text-white font-mono font-medium">
+                            {pricing.symbol}{Math.round(pricing.monthlyExVAT).toLocaleString()}
+                            {pricing.hasVAT && <span className="text-white/60 text-sm"> +VAT</span>}
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+                    
+                    <div className="flex justify-between items-center py-3 border-b border-white/10">
+                      <span className="text-white/80">Monthly payment (Month 2 onwards)</span>
+                      <div className="text-right">
+                        {pricing.discount > 0 && (
+                          <div>
+                            <span className="text-white/60 line-through font-mono text-sm">
+                              {pricing.symbol}{scalePricing[currency].monthly.toLocaleString()}
+                              {pricing.hasVAT && <span className="text-white/60 text-xs"> +VAT</span>}
+                            </span>
+                          </div>
+                        )}
+                        <span className="text-white font-mono">
+                          {pricing.symbol}{Math.round(pricing.monthlyExVAT).toLocaleString()}
+                          {pricing.hasVAT && <span className="text-white/60 text-sm"> +VAT</span>}
+                        </span>
+                      </div>
+                    </div>
+                  </>
+                )}
                 
                 {pricing.discount > 0 && (
                   <div className="bg-emerald-500/10 rounded-lg p-4 border border-emerald-500/30">
@@ -590,7 +626,7 @@ Timestamp: ${new Date().toLocaleString()}`;
                 <div className="space-y-3">
                   <div className="flex items-center gap-3">
                     <Check className="w-5 h-5 text-emerald-400 flex-shrink-0" />
-                    <span className="text-white/90">10,000 AI Video Emails/month</span>
+                    <span className="text-white/90">Up to 10,000 AI Video Emails/month</span>
                   </div>
                   
                   <div className="flex items-center gap-3">
