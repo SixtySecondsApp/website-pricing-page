@@ -30,4 +30,5 @@ yarn-error.log*
 *.ntvs*
 *.njsproj
 *.sln
-*.sw? 
+*.sw? .history/
+.env
