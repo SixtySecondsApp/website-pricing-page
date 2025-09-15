@@ -30,5 +30,17 @@ yarn-error.log*
 *.ntvs*
 *.njsproj
 *.sln
-*.sw? .history/
+*.sw? 
+
+# Environment variables
 .env
+.env.*
+*.env
+!.env.example
+!.env.sample
+
+# Deployment
+.vercel
+
+# Editor history
+.history/
