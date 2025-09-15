@@ -915,8 +915,8 @@ const ModernShowcase = ({ currency, showPricing: initialShowPricing }) => {
   useEffect(() => {
     const path = location.pathname;
     
-    // Redirect pricing routes to Scale promotion page
-    if (path === '/pricing' || path.endsWith('/pricing')) {
+    // Only redirect pricing routes to Scale promotion page if NOT in legacy context
+    if ((path === '/pricing' || path.endsWith('/pricing')) && !path.startsWith('/legacy/')) {
       // Get the currency prefix and redirect to Scale page
       const currencyPrefix = path.includes('/UK') ? '/UK' : 
                            path.includes('/US') ? '/US' : 
@@ -972,14 +972,24 @@ const ModernShowcase = ({ currency, showPricing: initialShowPricing }) => {
   // Update navigation handlers
   const handleNavigation = (nextStep, challenge = null) => {
     const prefix = getCurrencyPrefix();
+    const isLegacy = location.pathname.startsWith('/legacy/');
     
     if (nextStep === 'solutions' && challenge) {
       navigate(`${prefix}/solutions/${challenge.id}`);
     } else if (nextStep === 'pricing') {
-      // Redirect to Scale promotion page instead of old pricing
-      navigate(`${prefix}/scale`);
+      if (isLegacy) {
+        // Stay in legacy mode - show pricing within legacy system
+        setCurrentStep('pricing');
+      } else {
+        // Redirect to Scale promotion page
+        navigate(`${prefix}/scale`);
+      }
     } else {
-      navigate(prefix || '/UK');
+      if (isLegacy) {
+        navigate(`/legacy${prefix}`);
+      } else {
+        navigate(prefix || '/UK');
+      }
     }
   };
 
@@ -1687,13 +1697,24 @@ Timestamp: ${new Date().toLocaleString()}`;
                                                currencyOption === 'USD' ? '/US' : 
                                                currencyOption === 'EUR' ? '/EU' : '';
                               
+                              const isLegacy = location.pathname.startsWith('/legacy/');
+                              
                               if (showPricing) {
-                                // Redirect to Scale promotion page instead of old pricing
-                                navigate(`${newPrefix}/scale`);
+                                if (isLegacy) {
+                                  // Stay in legacy pricing
+                                  navigate(`/legacy${newPrefix}`);
+                                } else {
+                                  // Redirect to Scale promotion page
+                                  navigate(`${newPrefix}/scale`);
+                                }
                               } else if (selectedChallenge) {
                                 navigate(`${newPrefix}/solutions/${selectedChallenge.id}`);
                               } else {
-                                navigate(newPrefix || '/');
+                                if (isLegacy) {
+                                  navigate(`/legacy${newPrefix}`);
+                                } else {
+                                  navigate(newPrefix || '/');
+                                }
                               }
                             }}
                             className={`px-4 py-2 rounded-md text-sm font-medium transition-all duration-200 ${
